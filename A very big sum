@@ -1,0 +1,29 @@
+In this challenge, you need to calculate and print the sum of elements in an array, considering that some integers may be very large.
+
+Function Description
+
+Complete the  function with the following parameter(s):
+
+Sample Input
+
+STDIN                                                   Function
+-----                                                   --------
+5                                                       arr[] size n = 5
+1000000001 1000000002 1000000003 1000000004 1000000005  arr[...]  
+Output
+
+5000000015
+
+Answer:
+
+function aVeryBigSum(ar: number[]): number {
+    let sum = 0;
+    ar.forEach(num => 
+    {sum += num
+    })
+    return sum;
+
+}
+
+
+
