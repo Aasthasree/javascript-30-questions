@@ -1,0 +1,16 @@
+// Given an array of integers and a positive integer k, determine the number of (i,j) pairs where i<j and ar[i] + ar[j]  is divisible by k .
+
+Answer:  function divisibleSumPairs(n: number, k: number, ar: number[]): number {
+    let count = 0;
+
+    ar.forEach((value, i) => {
+        ar.forEach((otherValue, j) => {
+            if (i < j && (value + otherValue) % k === 0) {
+                count++;
+            }
+        });
+    });
+
+    return count;
+
+}
