@@ -1,0 +1,26 @@
+// Given an array of bird sightings where every element represents a bird type id, determine the id of the most frequently sighted type. If more than 1 type has been spotted that maximum amount, return the smallest of their ids.
+
+Answer : function migratoryBirds(arr: number[]): number {
+    const countMap: Record<number, number> = {};
+
+    arr.forEach(birdType => {
+        countMap[birdType] = (countMap[birdType] || 0) + 1;
+    });
+
+    let maxCount = 0;
+    let resultType = Infinity;
+
+    Object.entries(countMap).forEach(([typeStr, count]) => {
+        const type = Number(typeStr);
+        if (
+            count > maxCount ||
+            (count === maxCount && type < resultType)
+        ) {
+            maxCount = count;
+            resultType = type;
+        }
+    });
+
+    return resultType;
+
+}
